@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallAgent.ai | Next-Gen AI Voice Portal</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4f46e5',
+                        secondary: '#4338ca',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        outfit: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Marked JS -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="bg-[#fcfdfe] text-slate-700 font-sans antialiased overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <header class="min-h-[80vh] flex flex-col items-center justify-center relative px-6 text-center overflow-hidden">
+        <!-- Background Decorations -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
+            <div class="absolute top-[-10%] right-[-10%] w-[400px] h-[400px] bg-primary/20 rounded-full blur-[100px]">
+            </div>
+            <div
+                class="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] bg-secondary/20 rounded-full blur-[100px]">
+            </div>
+        </div>
+
+        <nav class="absolute top-0 w-full p-8 flex justify-center items-center max-w-7xl mx-auto">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-lg shadow-primary/30">
+                    <i class="fas fa-microphone-lines text-white text-xl"></i>
+                </div>
+                <h1 class="font-outfit font-bold text-2xl tracking-tight text-slate-800">CallAgent<span
+                        class="text-primary">.ai</span></h1>
+            </div>
+        </nav>
+
+        <div class="max-w-5xl mx-auto py-20 fade-in">
+            <span
+                class="bg-primary/5 text-primary text-[10px] uppercase tracking-widest font-black px-4 py-2 rounded-full border border-primary/10 inline-block mb-6">Autonomous
+                Voice AI</span>
+            <h2 class="font-outfit text-6xl md:text-8xl font-black text-slate-900 leading-[1.1] mb-8 text-balance">
+                The Future of <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary text-balance">Voice
+                    Interaction.</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left mt-16">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-slate-800 font-outfit">What is CallAgent.ai?</h3>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        CallAgent.ai is not just another automated voice responder. It is a <strong>human-grade AI Voice
+                            Agent</strong> designed to behave like a real person. By utilizing advanced <strong>Natural
+                            Language Understanding (NLU)</strong>, it doesn't just recognize words; it anticipates
+                        needs, handles interruptions gracefully, and maintains a consistent persona throughout the call.
+                    </p>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        Whether it's managing customer support, qualifying outbound leads, or automating appointment
+                        scheduling, CallAgent.ai provides a 24/7 elastic workforce that sounds indistinguishable from a
+                        top-tier agent.
+                    </p>
+                </div>
+                <div class="space-y-8 bg-white/40 backdrop-blur-sm p-8 rounded-[32px] border border-white shadow-sm">
+                    <h3 class="text-2xl font-bold text-slate-800 font-outfit">Core Capabilities</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Adaptive Barge-in</h4>
+                                <p class="text-xs text-slate-500">The agent stops talking immediately when the user
+                                    speaks, ensuring a fluid, natural conversation flow.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Contextual Memory</h4>
+                                <p class="text-xs text-slate-500">Remembers details from the beginning of the call to
+                                    provide coherent answers later on.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-sm">Enterprise Integrations</h4>
+                                <p class="text-xs text-slate-500">Directly syncs call outcomes and transcripts with your
+                                    existing CRM or database.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Deep Dive: What it does & How we built it -->
+    <section id="technical-story" class="py-32 bg-white relative">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-24">
+                <h2 class="font-outfit text-4xl md:text-5xl font-black text-slate-900 mb-6">Building the Brain</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto text-lg">We didn't just connect APIs; we built a synchronized
+                    symphony of low-latency voice protocols.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Twilio AI Section -->
+                <div class="crystal-card p-10 rounded-[32px] space-y-6 flex flex-col items-center text-center">
+                    <div
+                        class="w-20 h-20 bg-red-50 text-red-500 rounded-3xl flex items-center justify-center text-3xl shadow-sm border border-red-100">
+                        <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Twilio AI Integration</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        The backbone of our telephony. We utilize <strong>Twilio Media Streams</strong> to establish a
+                        bidirectional WebSocket. Instead of waiting for recordings, we stream <strong>raw \`mulaw\`
+                            audio</strong> in chunks of 20ms for instant communication.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-2 pt-4">
+                        <span class="text-[10px] font-bold bg-red-50 text-red-600 px-3 py-1 rounded-lg">Media
+                            Streams</span>
+                        <span
+                            class="text-[10px] font-bold bg-red-50 text-red-600 px-3 py-1 rounded-lg">WebSockets</span>
+                    </div>
+                </div>
+
+                <!-- AI Pipeline Section -->
+                <div
+                    class="crystal-card p-10 rounded-[32px] space-y-6 flex flex-col items-center text-center scale-105 z-10 shadow-2xl shadow-primary/5">
+                    <div
+                        class="w-20 h-20 bg-indigo-50 text-indigo-500 rounded-3xl flex items-center justify-center text-3xl shadow-sm border border-indigo-100">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">The Intelligence Chain</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        At the heart lies a parallel processing unit. <strong>Deepgram</strong> transcribes audio while
+                        <strong>Groq/Llama-3.1</strong> pre-calculates the next response. Once ready, <strong>ElevenLabs
+                            Flash</strong> synthesizes speech in less than 300ms.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-2 pt-4">
+                        <span class="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-3 py-1 rounded-lg">LLM
+                            Orchestration</span>
+                        <span class="text-[10px] font-bold bg-indigo-50 text-indigo-600 px-3 py-1 rounded-lg">Real-time
+                            STT</span>
+                    </div>
+                </div>
+
+                <!-- Custom Logic Section -->
+                <div class="crystal-card p-10 rounded-[32px] space-y-6 flex flex-col items-center text-center">
+                    <div
+                        class="w-20 h-20 bg-amber-50 text-amber-500 rounded-3xl flex items-center justify-center text-3xl shadow-sm border border-amber-100">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Autonomous Logic</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        We built the orchestration layer in <strong>FastAPI</strong> using asynchronous Python. Our
+                        custom <strong>Barge-in Logic</strong> is powered by a proprietary VAD algorithm that detects
+                        human speech patterns vs background noise, allowing the AI to "listen" while it "speaks".
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-2 pt-4">
+                        <span class="text-[10px] font-bold bg-amber-50 text-amber-600 px-3 py-1 rounded-lg">Async
+                            Python</span>
+                        <span class="text-[10px] font-bold bg-amber-50 text-amber-600 px-3 py-1 rounded-lg">Barge-in
+                            VAD</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deep Dive: The Strategic Value -->
+            <div class="mt-32 grid md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h3 class="font-outfit text-4xl font-bold text-slate-900 leading-tight">Beyond Automation: <br><span
+                            class="text-primary">Human-Scale Intelligence.</span></h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        Traditional IVR systems frustrate customers with rigid menus. CallAgent.ai replaces those menus
+                        with an open-ended dialogue. Our agent understands <strong>nuance, slang, and
+                            sentiment</strong>, allowing it to de-escalate angry callers or enthusiastically engage with
+                        hot leads.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                            <h5 class="font-bold text-slate-800 text-sm mb-1">99.9% Uptime</h5>
+                            <p class="text-[10px] text-slate-400">Our cloud-native infrastructure ensures your agent
+                                never misses a call.</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-100">
+                            <h5 class="font-bold text-slate-800 text-sm mb-1">Instant Scale</h5>
+                            <p class="text-[10px] text-slate-400">Launch 1,000 concurrent agents in seconds during peak
+                                traffic.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary opacity-20 blur-2xl rounded-[40px]">
+                    </div>
+                    <div
+                        class="relative bg-white p-10 rounded-[40px] border border-slate-100 shadow-xl overflow-hidden">
+                        <h4 class="font-bold text-slate-800 mb-6 flex items-center gap-2">
+                            <i class="fas fa-layer-group text-primary"></i> Data-Driven Deployment
+                        </h4>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary shrink-0">
+                                    <i class="fas fa-file-csv"></i></div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-sm">Step 1: Ingest Records</h5>
+                                    <p class="text-xs text-slate-500">Upload your user database. Our system
+                                        automatically cleans and sanitizes phone numbers.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary shrink-0">
+                                    <i class="fas fa-bullseye"></i></div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-sm">Step 2: Set Objectives</h5>
+                                    <p class="text-xs text-slate-500">Define if the goal is sales, support, or research.
+                                        The AI adapts its tone accordingly.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div
+                                    class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center text-green-600 shrink-0">
+                                    <i class="fas fa-rocket"></i></div>
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-sm">Step 3: Go Live</h5>
+                                    <p class="text-xs text-slate-500">Calls are initiated. Transcripts and sentiment
+                                        scores appear on your dashboard in real-time.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operational Flow Visualizer -->
+            <div class="mt-32 p-12 rounded-[40px] bg-slate-900 text-white shadow-2xl overflow-hidden relative">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full"></div>
+                <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span
+                            class="text-primary font-black text-[10px] uppercase tracking-widest mb-4 inline-block">Technical
+                            Execution</span>
+                        <h3 class="font-outfit text-4xl font-bold mb-6">Built with Twilio AI & Performance Protocols
+                        </h3>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            We leveraged the **Twilio AI assistant ecosystem** but took it further by building our own
+                            **low-latency bridge**. By bypassing standard HTTP triggers and moving to raw stream
+                            processing, we achieved the industry-leading <300ms response time. </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <div
+                                        class="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-xs font-bold">
+                                        WebSockets (wss://)</div>
+                                    <div
+                                        class="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-xs font-bold">
+                                        Mulaw 8bit/8kHz</div>
+                                    <div
+                                        class="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-xs font-bold">
+                                        Llama-3.1-70B</div>
+                                </div>
+                    </div>
+                    <div class="glass-effect p-8 rounded-3xl border-white/10">
+                        <h4 class="font-bold mb-4 flex items-center gap-2 italic">
+                            <i class="fas fa-terminal text-primary"></i> Live Process Monitor
+                        </h4>
+                        <div class="space-y-3 font-mono text-[11px] text-slate-300">
+                            <p class="text-green-400">>> [SYS] Handshaking with Twilio API...</p>
+                            <p>>> [AI] Deepgram STT stream active...</p>
+                            <p>>> [LLM] Context window: 128k tokens...</p>
+                            <p class="text-blue-400">>> [VOICE] ElevenLabs Flash-v2.5 streaming...</p>
+                            <p class="animate-pulse">>> [READY] Agent handling 15 concurrect calls</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Workflow -->
+    <section class="py-24 bg-[#f8fafc]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="glass-effect p-12 rounded-[40px] border border-white">
+                <h3 class="font-outfit text-3xl font-bold text-slate-900 mb-12 text-center">How an Agent "Self-Heals" &
+                    Thinks</h3>
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8 relative">
+                    <!-- Workflow Step 1 -->
+                    <div class="flex-1 text-center space-y-4">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-slate-100 text-primary font-black">
+                            1</div>
+                        <h4 class="font-bold text-slate-800">Input Capture</h4>
+                        <p class="text-xs text-slate-400">User voice captured via Twilio WebSocket stream.</p>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-200 hidden md:block"></i>
+                    <!-- Workflow Step 2 -->
+                    <div class="flex-1 text-center space-y-4">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-slate-100 text-primary font-black">
+                            2</div>
+                        <h4 class="font-bold text-slate-800">STT & Intent</h4>
+                        <p class="text-xs text-slate-400">Deepgram transcribes and Groq extracts user intent.</p>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-200 hidden md:block"></i>
+                    <!-- Workflow Step 3 -->
+                    <div class="flex-1 text-center space-y-4">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-slate-100 text-primary font-black">
+                            3</div>
+                        <h4 class="font-bold text-slate-800">Synthesis</h4>
+                        <p class="text-xs text-slate-400">ElevenLabs Flash generates human-vibe speech chunks.</p>
+                    </div>
+                    <i class="fas fa-arrow-right text-slate-200 hidden md:block"></i>
+                    <!-- Workflow Step 4 -->
+                    <div class="flex-1 text-center space-y-4">
+                        <div
+                            class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto shadow-sm border border-slate-100 text-primary font-black">
+                            4</div>
+                        <h4 class="font-bold text-slate-800">Playback</h4>
+                        <p class="text-xs text-slate-400">Audio sent back to Twilio stream and played to user.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Health Section (Main Dashboard) -->
+    <section id="dashboard" class="py-32 bg-white border-y border-slate-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-primary font-black text-[10px] uppercase tracking-widest mb-4 inline-block">Real-time
+                    Progress</span>
+                <h2 class="font-outfit text-5xl font-bold text-slate-900 mb-4">Project Health Dashboard</h2>
+                <div
+                    class="text-5xl font-black text-slate-800 mt-6 inline-block bg-slate-50 px-8 py-4 rounded-3xl border border-slate-100 italic">
+                    52<span class="text-primary NOT-italic">%</span> <span
+                        class="text-lg font-bold text-slate-400 align-middle ml-2">Total Completion</span></div>
+            </div>
+
+            <!-- Dynamic Dashboard Container -->
+            <div id="content" class="min-h-[400px]">
+                <!-- Dashboard Renderer will inject data here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 text-center text-slate-400 border-t border-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-center gap-3 mb-8">
+                <div class="w-8 h-8 bg-slate-50 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-microphone-lines text-slate-300"></i>
+                </div>
+                <h1 class="font-outfit font-bold text-lg text-slate-600">CallAgent.ai</h1>
+            </div>
+            <p class="text-[10px] opacity-30 uppercase tracking-widest font-black">&copy; 2026 Sysnet Global Technology
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/script.js"></script>
+</body>
+
+</html>
