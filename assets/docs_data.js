@@ -150,7 +150,7 @@ const docsData = [
         id: "ph4",
         title: "🔮 Phase 4: Intelligence & Scaling",
         status: "Planned",
-        progress: 15,
+        progress: 0,
         icon: "fa-brain",
         details: [
           {
