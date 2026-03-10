@@ -96,10 +96,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Auto-expand Phase 2 for visibility if it's the current focus
+        // Auto-expand Infrastructure or Phase 2 for visibility if it's the current focus
         setTimeout(() => {
+            const infra = document.getElementById('infra');
             const ph2 = document.getElementById('ph2');
-            if (ph2) ph2.classList.add('expanded');
+            if (infra) infra.classList.add('expanded');
+            else if (ph2) ph2.classList.add('expanded');
         }, 500);
     }
 
